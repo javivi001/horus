@@ -43,8 +43,6 @@ class HorusApp(wx.App):
 
 		self.basePath = profile.getBasePath()
 
-		self.Bind(wx.EVT_ACTIVATE_APP, self.OnActivate)
-
 		if sys.isDarwin():
 			self.afterSplashCallback()
 		else:
@@ -58,14 +56,16 @@ class HorusApp(wx.App):
 		#-- Load Language
 		resources.setupLocalization(profile.getPreference('language'))
 
+		#-- Create Main Window
+		self.mainWindow = MainWindow()
+
 		#-- Check for updates
 		if profile.getPreferenceBool('check_for_updates') and version.checkForUpdates():
-			v = VersionWindow(None)
+			v = VersionWindow(self.mainWindow)
 			if v.download:
 				return
 
-		#-- Create Main Window
-		self.mainWindow = MainWindow()
+		#-- Show Main Window
 		self.SetTopWindow(self.mainWindow)
 		self.mainWindow.Show()
 		
@@ -85,11 +85,6 @@ class HorusApp(wx.App):
 
 	def MacReopenApp(self):
 		self.GetTopWindow().Raise()
-
-	def OnActivate(self, e):
-		if e.GetActive():
-			self.GetTopWindow().Raise()
-		e.Skip()
 
 	def StupidMacOSWorkaround(self):
 		"""
@@ -124,8 +119,3 @@ if sys.isDarwin(): #Mac magic. Dragons live here. This sets full screen options.
 else:
 	def setFullScreenCapable(frame):
 		pass
-
-
-
-
-
