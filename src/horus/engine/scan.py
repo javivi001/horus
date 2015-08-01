@@ -326,6 +326,7 @@ class SimpleScan(Scan):
 
 	def _captureThread(self):
 		""""""
+		linea = 0
 		if sys.isWindows() or sys.isDarwin():
 			flush_both = 3
 			flush_single = 1
@@ -351,22 +352,26 @@ class SimpleScan(Scan):
 					#-- Left laser
 					if self.pcg.useLeftLaser and not self.pcg.useRightLaser:
 						imageLaserLeft = self.driver.camera.captureImage(flush=True, flushValue=flush_single)
+						linea += 1
 
 					#-- Right laser
 					if not self.pcg.useLeftLaser and self.pcg.useRightLaser:
 						imageLaserRight = self.driver.camera.captureImage(flush=True, flushValue=flush_single)
+						linea += 1
 
 					##-- Both laser
 					if self.pcg.useLeftLaser and self.pcg.useRightLaser:
 						self.driver.board.setLeftLaserOn()
 						self.driver.board.setRightLaserOff()
 						imgLaserLeft = self.driver.camera.captureImage(flush=True, flushValue=flush_both)
+                                                linea += 1
 
 						self.driver.board.setRightLaserOn()
 						self.driver.board.setLeftLaserOff()
 						imgLaserRight = self.driver.camera.captureImage(flush=True, flushValue=flush_both)
+                                                linea += 1
 					
-					print "> {0} deg <".format(self.theta * 180.0 / np.pi)
+					print "> {0} deg < > {1} lin <".format(self.theta * 180.0 / np.pi,linea)
 					self.theta -= self.pcg.degrees * self.pcg.rad
 
 					#-- Move motor
@@ -460,6 +465,7 @@ class TextureScan(Scan):
 
 	def _captureThread(self):
 		""""""
+                linea = 0
 		imgRaw = None
 		imgLaserLeft = None
 		imgLaserRight = None
@@ -489,6 +495,7 @@ class TextureScan(Scan):
 								imgRaw = self.driver.camera.capture.read()[1]
 								self.driver.board.setLeftLaserOn()
 								self.driver.camerareading = False
+								linea += 1
 
 								if imgRaw is None or imgLaserLeft is None:
 									self.driver.camera._fail()
@@ -510,6 +517,7 @@ class TextureScan(Scan):
 								imgRaw = self.driver.camera.capture.read()[1]
 								self.driver.board.setRightLaserOn()
 								self.driver.camerareading = False
+								linea += 1
 
 								if imgRaw is None or imgLaserRight is None:
 									self.driver.camera._fail()
@@ -535,6 +543,7 @@ class TextureScan(Scan):
 								self.driver.board.setRightLaserOff()
 								imgRaw = self.driver.camera.capture.read()[1]
 								self.driver.camerareading = False
+								linea += 2
 
 								if imgRaw is None or imgLaserLeft is None or imgLaserRight is None:
 									self.driver.camera._fail()
@@ -566,6 +575,7 @@ class TextureScan(Scan):
 							self.driver.board.setLeftLaserOn()
 							self.driver.board.setRightLaserOff()
 							imgLaserLeft = self.driver.camera.captureImage(flush=True, flushValue=flush)
+							linea += 1
 						else:
 							imgLaserLeft = None
 
@@ -573,10 +583,11 @@ class TextureScan(Scan):
 							self.driver.board.setRightLaserOn()
 							self.driver.board.setLeftLaserOff()
 							imgLaserRight = self.driver.camera.captureImage(flush=True, flushValue=flush)
+							linea += 1
 						else:
 							imgLaserRight = None
 
-					print "> {0} deg <".format(self.theta * 180.0 / np.pi)
+					print "> {0} deg < > {1} lin <".format(self.theta * 180.0 / np.pi,linea)
 					self.theta -= self.pcg.degrees * self.pcg.rad
 
 					#-- Move motor
