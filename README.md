@@ -3,7 +3,7 @@
 
 ## News of these fork:
 
-01 - Ago - 2015 .- Never more change the possition of the patther on calibration! Just put in front of the camera, adjust camera and the calibration engine will do the rest.
+01 - Ago - 2015 .- Never more change the possition of the patther on calibration! Just put in front of the camera, adjust the camera settings, and the calibration engine will do the rest.
 
 ## What's Horus?
 
@@ -25,9 +25,9 @@ More interest links are shown below:
 
 These fork is my interpretation of what should be, and how should it work Horus, a fantastis software for controlling laser scanner based on Ciclops by BQ.
 
-At the moment I'm working on get the finest calibration possible, and make Horus more cominicative to try to understand it better.
+At the moment I'm working on get the finest calibration possible, and make Horus more comunicative to try to understand it better how it works.
 
-Also I'm working on porting Horus to Synology NAS and Raspberry Pi. I have both working, but I have to finish the instrucctions.
+Also I'm working on porting Horus to Synology NAS and Raspberry Pi. I have both systems working, but I have to finish the instrucctions.
 
 
 ## Installation
@@ -73,6 +73,10 @@ NOTE: *deb* and *exe* packages can be generated in *debian like* systems
 * [Darwin development](doc/development/darwin.md)
 
 NOTE: *dmg* packages only can be generated in Mac OS X
+
+#### Synology NAS
+
+To-do, but it´s possible.
 
 
 [ubuntu-logo]: doc/images/ubuntu.png
