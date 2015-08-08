@@ -270,11 +270,11 @@ class MainWindow(wx.Frame):
 
     def onClearModel(self, event):
         if self.scanningWorkbench.sceneView._object is not None:
-            dlg = wx.MessageDialog(self, _("Your current model will be erased.\nDo you really want to do it?"), _("Clear Point Cloud"), wx.YES_NO | wx.ICON_QUESTION)
-            result = dlg.ShowModal() == wx.ID_YES
-            dlg.Destroy()
-            if result:
-                self.scanningWorkbench.sceneView._clearScene()
+            #dlg = wx.MessageDialog(self, _("Your current model will be erased.\nDo you really want to do it?"), _("Clear Point Cloud"), wx.YES_NO | wx.ICON_QUESTION)
+            #result = dlg.ShowModal() == wx.ID_YES
+            #dlg.Destroy()
+            #if result:
+            self.scanningWorkbench.sceneView._clearScene()
 
     def onOpenProfile(self, event):
         """ """
@@ -300,12 +300,12 @@ class MainWindow(wx.Frame):
 
     def onResetProfile(self, event):
         """ """
-        dlg = wx.MessageDialog(self, _("This will reset all profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost!\nDo you really want to reset?"), _("Profile reset"), wx.YES_NO | wx.ICON_QUESTION)
-        result = dlg.ShowModal() == wx.ID_YES
-        dlg.Destroy()
-        if result:
-            profile.resetProfile()
-            self.updateProfileToAllControls()
+        #dlg = wx.MessageDialog(self, _("This will reset all profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost!\nDo you really want to reset?"), _("Profile reset"), wx.YES_NO | wx.ICON_QUESTION)
+        #result = dlg.ShowModal() == wx.ID_YES
+        #dlg.Destroy()
+        #if result:
+        profile.resetProfile()
+        self.updateProfileToAllControls()
 
     def onExit(self, event):
         self.Close(True)
