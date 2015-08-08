@@ -322,11 +322,11 @@ class SceneView(openglGui.glGuiPanel):
 
 	def onDeleteObject(self, event):
 		if self._object is not None:
-			dlg = wx.MessageDialog(self, _("Your current model will be erased.\nDo you really want to do it?"), _("Clear Point Cloud"), wx.YES_NO | wx.ICON_QUESTION)
-			result = dlg.ShowModal() == wx.ID_YES
-			dlg.Destroy()
-			if result:
-				self._clearScene()
+            #dlg = wx.MessageDialog(self, _("Your current model will be erased.\nDo you really want to do it?"), _("Clear Point Cloud"), wx.YES_NO | wx.ICON_QUESTION)
+            #result = dlg.ShowModal() == wx.ID_YES
+            #dlg.Destroy()
+            #if result:
+            self._clearScene()
 
 	def OnMouseMotion(self,e):
 		if e.Dragging() and self._mouseState is not None:
