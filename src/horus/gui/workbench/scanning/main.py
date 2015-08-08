@@ -246,9 +246,9 @@ class ScanningWorkbench(WorkbenchConnection):
 	def afterScan(self, response):
 		ret, result = response
 		if ret:
-			dlg = wx.MessageDialog(self, _("Scanning has finished. If you want to save your point cloud go to File > Save Model"), _("Scanning finished!"), wx.OK|wx.ICON_INFORMATION)
-			dlg.ShowModal()
-			dlg.Destroy()
+            #dlg = wx.MessageDialog(self, _("Scanning has finished. If you want to save your point cloud go to File > Save Model"), _("Scanning finished!"), wx.OK|wx.ICON_INFORMATION)
+            #dlg.ShowModal()
+            #dlg.Destroy()
 			self.scanning = False
 			self.onScanFinished()
 
