@@ -189,22 +189,22 @@ class ScanningWorkbench(WorkbenchConnection):
 			self.pointCloudTimer.Start(milliseconds=50)
 		else:
 			result = True
-			if self.sceneView._object is not None:
-				dlg = wx.MessageDialog(self, _("Your current model will be erased.\nDo you really want to do it?"), _("Clear Point Cloud"), wx.YES_NO | wx.ICON_QUESTION)
-				result = dlg.ShowModal() == wx.ID_YES
-				dlg.Destroy()
-			if result:
-				value = profile.getProfileSetting('scan_type')
-				if value == 'Simple Scan':
-					self.currentScan = self.simpleScan
-				elif value == 'Texture Scan':
-					self.currentScan = self.textureScan
-				self.gauge.SetValue(0)
-				self.gauge.Show()
-				self.scenePanel.Layout()
-				self.Layout()
-				self.currentScan.setCallbacks(self.beforeScan, lambda r: wx.CallAfter(self.afterScan,r))
-				self.currentScan.start()
+            #if self.sceneView._object is not None:
+                #dlg = wx.MessageDialog(self, _("Your current model will be erased.\nDo you really want to do it?"), _("Clear Point Cloud"), wx.YES_NO | wx.ICON_QUESTION)
+                #result = dlg.ShowModal() == wx.ID_YES
+                #dlg.Destroy()
+            #if result:
+            value = profile.getProfileSetting('scan_type')
+            if value == 'Simple Scan':
+                self.currentScan = self.simpleScan
+            elif value == 'Texture Scan':
+                self.currentScan = self.textureScan
+            self.gauge.SetValue(0)
+            self.gauge.Show()
+            self.scenePanel.Layout()
+            self.Layout()
+            self.currentScan.setCallbacks(self.beforeScan, lambda r: wx.CallAfter(self.afterScan,r))
+            self.currentScan.start()
 
 	def beforeScan(self):
 		self.scanning = True
@@ -255,17 +255,17 @@ class ScanningWorkbench(WorkbenchConnection):
 	def onStopToolClicked(self, event):
 		paused = self.currentScan.inactive
 		self.currentScan.pause()
-		dlg = wx.MessageDialog(self, _("Your current scanning will be stopped.\nDo you really want to do it?"), _("Stop Scanning"), wx.YES_NO | wx.ICON_QUESTION)
-		result = dlg.ShowModal() == wx.ID_YES
-		dlg.Destroy()
+        #dlg = wx.MessageDialog(self, _("Your current scanning will be stopped.\nDo you really want to do it?"), _("Stop Scanning"), wx.YES_NO | wx.ICON_QUESTION)
+        #result = dlg.ShowModal() == wx.ID_YES
+        #dlg.Destroy()
 
-		if result:
-			self.scanning = False
-			self.currentScan.stop()
-			self.onScanFinished()
-		else:
-			if not paused:
-				self.currentScan.resume()
+        #if result:
+        self.scanning = False
+        self.currentScan.stop()
+        self.onScanFinished()
+        #else:
+            #if not paused:
+                #self.currentScan.resume()
 
 	def onScanFinished(self):
 		self.buttonShowVideoViews.Hide()
