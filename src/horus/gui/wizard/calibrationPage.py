@@ -58,7 +58,7 @@ class CalibrationPage(WizardPage):
 		self.patternLabel = wx.StaticText(self.panel, label=_("Put the pattern on the platform as shown in the picture and press \"Calibrate\""))
 		self.patternLabel.Wrap(400)
 		self.imageView = ImageView(self.panel)
-		self.imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-right.jpg")))
+		self.imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-center.jpg")))
 		self.calibrateButton = wx.Button(self.panel, label=_("Calibrate"))
 		self.cancelButton = wx.Button(self.panel, label=_("Cancel"))
 		self.gauge = wx.Gauge(self.panel, range=100, size=(-1, 30))
