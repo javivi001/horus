@@ -7,7 +7,7 @@
 # Copyright (C) 2014-2015 Mundo Reader S.L.                             #
 #                                                                       #
 # Date: August, November 2014                                           #
-# Author: Jesús Arroyo Torrens <jesus.arroyo@bq.com>   	                #
+# Author: Jesús Arroyo Torrens <jesus.arroyo@bq.com>   	           #
 #                                                                       #
 # This program is free software: you can redistribute it and/or modify  #
 # it under the terms of the GNU General Public License as published by  #
@@ -349,7 +349,7 @@ class LaserTriangulationMainPage(Page):
 
 		#-- Image View
 		imageView = ImageView(self._panel)
-		imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-right.jpg")))
+		imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-center.jpg")))
 
 		#-- Video View
 		self.videoView = VideoView(self._panel, self.getFrame, 50)
@@ -587,7 +587,7 @@ class SimpleLaserTriangulationMainPage(Page):
 
 		#-- Image View
 		imageView = ImageView(self._panel)
-		imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-right.jpg")))
+		imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-center.jpg")))
 
 		#-- Video View
 		self.videoView = VideoView(self._panel, self.getFrame, 50)
@@ -775,7 +775,7 @@ class PlatformExtrinsicsMainPage(Page):
 
 		#-- Image View
 		imageView = ImageView(self._panel)
-		imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-left.jpg")))
+		imageView.setImage(wx.Image(resources.getPathForImage("pattern-position-center.jpg")))
 
 		#-- Video View
 		self.videoView = VideoView(self._panel, self.getFrame, 50)
