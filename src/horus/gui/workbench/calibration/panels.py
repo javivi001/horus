@@ -281,13 +281,13 @@ class CameraIntrinsicsPanel(CalibrationPanel):
             self.buttonEdit.SetLabel(_("Edit"))
 
     def onButtonDefaultPressed(self, event):
-        dlg = wx.MessageDialog(self, _("This will reset camera intrinsics profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Camera Intrinsics reset"), wx.YES_NO | wx.ICON_QUESTION)
-        result = dlg.ShowModal() == wx.ID_YES
-        dlg.Destroy()
-        if result:
-            profile.resetProfileSetting('camera_matrix')
-            profile.resetProfileSetting('distortion_vector')
-            self.updateProfile()
+        #dlg = wx.MessageDialog(self, _("This will reset camera intrinsics profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Camera Intrinsics reset"), wx.YES_NO | wx.ICON_QUESTION)
+        #result = dlg.ShowModal() == wx.ID_YES
+        #dlg.Destroy()
+        #if result:
+        profile.resetProfileSetting('camera_matrix')
+        profile.resetProfileSetting('distortion_vector')
+        self.updateProfile()
 
     def getParameters(self):
         return self.cameraValues, self.distortionValues
@@ -466,15 +466,15 @@ class LaserTriangulationPanel(CalibrationPanel):
             self.updateAllControlsToProfile()
 
     def onButtonDefaultPressed(self, event):
-        dlg = wx.MessageDialog(self, _("This will reset laser triangulation profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Laser Triangulation reset"), wx.YES_NO | wx.ICON_QUESTION)
-        result = dlg.ShowModal() == wx.ID_YES
-        dlg.Destroy()
-        if result:
-            profile.resetProfileSetting('distance_left')
-            profile.resetProfileSetting('normal_left')
-            profile.resetProfileSetting('distance_right')
-            profile.resetProfileSetting('normal_right')
-            self.updateProfile()
+        #dlg = wx.MessageDialog(self, _("This will reset laser triangulation profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Laser Triangulation reset"), wx.YES_NO | wx.ICON_QUESTION)
+        #result = dlg.ShowModal() == wx.ID_YES
+        #dlg.Destroy()
+        #if result:
+        profile.resetProfileSetting('distance_left')
+        profile.resetProfileSetting('normal_left')
+        profile.resetProfileSetting('distance_right')
+        profile.resetProfileSetting('normal_right')
+        self.updateProfile()
 
     def getParameters(self):
         return self.distanceLeftValue, self.normalLeftValues, self.distanceLeftValue, self.normalRightValues
@@ -651,14 +651,14 @@ class SimpleLaserTriangulationPanel(CalibrationPanel):
             self.updateAllControlsToProfile()
 
     def onButtonDefaultPressed(self, event):
-        dlg = wx.MessageDialog(self, _("This will reset simple laser triangulation profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Laser Triangulation reset"), wx.YES_NO | wx.ICON_QUESTION)
-        result = dlg.ShowModal() == wx.ID_YES
-        dlg.Destroy()
-        if result:
-            profile.resetProfileSetting('laser_coordinates')
-            profile.resetProfileSetting('laser_origin')
-            profile.resetProfileSetting('laser_normal')
-            self.updateProfile()
+        #dlg = wx.MessageDialog(self, _("This will reset simple laser triangulation profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Laser Triangulation reset"), wx.YES_NO | wx.ICON_QUESTION)
+        #result = dlg.ShowModal() == wx.ID_YES
+        #dlg.Destroy()
+        #if result:
+        profile.resetProfileSetting('laser_coordinates')
+        profile.resetProfileSetting('laser_origin')
+        profile.resetProfileSetting('laser_normal')
+        self.updateProfile()
 
     def getParameters(self):
         return self.coordinatesValues, self.originValues, self.normalValues
@@ -801,13 +801,13 @@ class PlatformExtrinsicsPanel(CalibrationPanel):
             self.updateAllControlsToProfile()
 
     def onButtonDefaultPressed(self, event):
-        dlg = wx.MessageDialog(self, _("This will reset platform extrinsics profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Platform Extrinsics reset"), wx.YES_NO | wx.ICON_QUESTION)
-        result = dlg.ShowModal() == wx.ID_YES
-        dlg.Destroy()
-        if result:
-            profile.resetProfileSetting('rotation_matrix')
-            profile.resetProfileSetting('translation_vector')
-            self.updateProfile()
+        #dlg = wx.MessageDialog(self, _("This will reset platform extrinsics profile settings to defaults.\nUnless you have saved your current profile, all settings will be lost! Do you really want to reset?"), _("Platform Extrinsics reset"), wx.YES_NO | wx.ICON_QUESTION)
+        #result = dlg.ShowModal() == wx.ID_YES
+        #dlg.Destroy()
+        #if result:
+        profile.resetProfileSetting('rotation_matrix')
+        profile.resetProfileSetting('translation_vector')
+        self.updateProfile()
 
     def getParameters(self):
         return self.rotationValues, self.translationValues
