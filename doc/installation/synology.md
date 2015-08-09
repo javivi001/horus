@@ -42,4 +42,4 @@ bash syno-horus.sh
 TODO
 
 
-[synology-logo]: doc/images/synology.png
+[synology-logo]: ../images/synology.png
