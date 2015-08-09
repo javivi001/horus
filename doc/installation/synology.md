@@ -4,7 +4,7 @@
 
 Firts of all, you need a Synology Nas updated, with ssh access with root credentials. [Guide](http://forum.synology.com/wiki/index.php/Enabling_the_Command_Line_Interface)
 
-Then, you have to Install [Debian Chroot](https://synocommunity.com/package/debian-chroot) addming the Synocomunity repo. As the says:
+Then, you have to Install [Debian Chroot](https://synocommunity.com/package/debian-chroot) addming the Synocomunity repo. As they says:
 
 Step 1:- Log into your NAS as administrator and go to Main Menu → Package Center → Settings and set Trust Level to Synology Inc. and trusted publishers.
 
@@ -16,7 +16,7 @@ Step 3:- Go back to the Package Center and enjoy SynoCommunity's packages in the
 At these point, we have two methods to install:
 
 
-### The easy ono (Automatic)
+### The easy one (Automatic)
 
 Open a ssh connection with your synology Nas and follow these instrucctions
 
@@ -40,3 +40,6 @@ bash syno-horus.sh
 
 
 TODO
+
+
+[synology-logo]: doc/images/synology.png
