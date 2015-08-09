@@ -151,4 +151,7 @@ If you don't have it, you can crosscompile in other pc with the synology chainto
 
 Ask me your questions!!!
 
+
+Regards!!!
+
 [synology-logo]: ../images/synology.png
