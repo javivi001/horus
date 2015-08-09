@@ -4,7 +4,7 @@
 
 Firts of all, you need a Synology Nas updated, with ssh access with root credentials. [Guide](http://forum.synology.com/wiki/index.php/Enabling_the_Command_Line_Interface)
 
-Then, you have to Install [Debian Chroot](https://synocommunity.com/package/debian-chroot) addming the Synocomunity repo. As they says:
+Then, you have to Install [Debian Chroot](https://synocommunity.com/package/debian-chroot) adding the Synocomunity repo. As they says:
 
 Step 1:- Log into your NAS as administrator and go to Main Menu → Package Center → Settings and set Trust Level to Synology Inc. and trusted publishers.
 
@@ -16,24 +16,22 @@ Step 3:- Go back to the Package Center and enjoy SynoCommunity's packages in the
 At these point, we have two methods to install:
 
 
-### The easy one (Automatic)
+### The easy one (Automatic and recomended)
 
-Open a ssh connection with your synology Nas and follow these instrucctions
+Open a ssh connection with your synology Nas and follow these instrucctions:
 
 ```bash
 ssh root@<yournas>.local -p XXXX
 
-... wait ...
-
 /var/packages/debian-chroot/scripts/start-stop-status chroot
 
-... Now we are in the console of Debian Chroot ...
+### Now we are in the console of Debian Chroot
 
 cd
 wget https://github.com/javivi001/horus/blob/develop/syno-horus.sh
 bash syno-horus.sh
 
-... Make coffe and take patience, but everything will work with only a pair of cuestions at beginig ...
+### Make coffe and take patience, but everything will work with only a pair of cuestions at beginig
 ```
 Enjoy Horus!!!
 
@@ -42,12 +40,11 @@ Enjoy Horus!!!
 
 ### The manual one
 
-Open a ssh connection as the other method
+
+Open a ssh connection as the other method:
 
 ```bash
 ssh root@<yournas>.local -p XXXX
-
-... wait ...
 
 /var/packages/debian-chroot/scripts/start-stop-status chroot
 
@@ -76,18 +73,17 @@ Install Basic comands and eviroment dependences:
 apt-get install git gitk -y
 apt-get install python2.7 python-pip python-wxgtk3.0 python-serial python-opengl python-pyglet python-numpy python-scipy python-matplotlib libdc1394-utils libdc1394-22 -y
 pip install -U pip setuptools
-apt-get install make cmake gcc g++ gfortran -y
 ```
 
 
-Install a desktop:
+Install a desktop suite:
 
 ```bash
 apt-get install lxde -y
 ```
 
 
-Install request for compilling Open CV
+Install request for compilling Open CV:
 
 ```bash
 apt-get install build-essential cmake make git gcc g++ gfortran libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy \
@@ -104,7 +100,7 @@ Stop:$  vncserver -kill :1
 ```
 
 
-Let's start compilling and installing custom OpenCV
+Let's start compilling and installing custom OpenCV:
 
 ```bash
 cd /root/
@@ -128,7 +124,7 @@ git clone https://github.com/bq/horus.git
 
 or if you prefer my fort:
 
-git clone https://github.com/bq/horus.git
+git clone https://github.com/javivi001/horus.git
 cd horus
 python src/horus.py
 ```
@@ -138,7 +134,7 @@ Enjoy Horus!!!
 
 ### IMPORTANT : Check yor kernel modules if you have in /lib/modules
 
-You will nedd:
+You will nedd to add modules (in these order, very important!):
 
  /lib/modules/videodev.ko
  /lib/modules/v4l2-int-device.ko
