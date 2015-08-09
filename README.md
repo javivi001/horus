@@ -3,9 +3,9 @@
 
 ## News of these fork:
 
-01 - Ago - 2015 .- Never more change the possition of the patther on calibration! Just put in front of the camera, adjust the camera settings, and the calibration engine will do the rest.
+01 - Ago - 2015 .- Never more change the possition of the patther on calibration! Just put in front of the camera, adjust camera and the calibration engine will do the rest.
 
-## What's Horus?
+## Whay is Horus?
 
 Horus is a general solution for 3D scanning. It provides graphic user interfaces for connection, configuration, control, calibration and scanning. It is ready to use with Open Source [Ciclop 3D Scanner](https://github.com/bq/ciclop).
 
@@ -25,9 +25,9 @@ More interest links are shown below:
 
 These fork is my interpretation of what should be, and how should it work Horus, a fantastis software for controlling laser scanner based on Ciclops by BQ.
 
-At the moment I'm working on get the finest calibration possible, and make Horus more comunicative to try to understand it better how it works.
+At the moment I'm working on get the finest calibration possible, and make Horus more cominicative to try to understand it better.
 
-Also I'm working on porting Horus to Synology NAS and Raspberry Pi. I have both systems working, but I have to finish the instrucctions.
+Also I'm working on porting Horus to Synology NAS and Raspberry Pi. I have both working, but I have to finish the instrucctions.
 
 
 ## Installation
@@ -48,7 +48,7 @@ Also I'm working on porting Horus to Synology NAS and Raspberry Pi. I have both 
 |:------------------:|:---------:|:--------:|:------------------------------------:|
 | ![][debian-logo]   | Debian    | 8        | [link](doc/installation/debian.md)   |
 | ![][raspbian-logo] | Raspbian  | RPi2     | [link](doc/installation/raspbian.md) |
-| ![][synology-logo] | Synology  | DSM 5.0  | Work in progress                     |  
+| ![][synology-logo] | Synology  | DSM 5.0  | [link](doc/installation/synology.md) |  
 
 ## Development
 
@@ -73,10 +73,6 @@ NOTE: *deb* and *exe* packages can be generated in *debian like* systems
 * [Darwin development](doc/development/darwin.md)
 
 NOTE: *dmg* packages only can be generated in Mac OS X
-
-#### Synology NAS
-
-To-do, but it´s possible.
 
 
 [ubuntu-logo]: doc/images/ubuntu.png
