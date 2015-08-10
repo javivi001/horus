@@ -48,7 +48,7 @@ Also I'm working on porting Horus to Synology NAS and Raspberry Pi. I have both 
 |:------------------:|:---------:|:--------:|:------------------------------------:|
 | ![][debian-logo]   | Debian    | 8        | [link](doc/installation/debian.md)   |
 | ![][raspbian-logo] | Raspbian  | RPi2     | [link](doc/installation/raspbian.md) |
-| ![][synology-logo] | Synology  | DSM 5.0  | Work in progress                     |  
+| ![][synology-logo] | Synology  | DSM 5.0  | [link](doc/installation/synology.md) |  
 
 ## Development
 
