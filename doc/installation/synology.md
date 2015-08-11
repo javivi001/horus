@@ -93,9 +93,9 @@ libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22
 Install an VNC Server that allow OpenGL over X11
 
 ```bash
-apt-get install vnc4server -y
+apt-get install vnc4server libgl1-mesa-swx11-dev-y
 
-Start:$ vncserver -geometry 10280x1024 -depth 24 :1
+Start:$ vncserver -geometry 10280x1024 -depth 24 :1 && export DISPLAY=':1'
 Stop:$  vncserver -kill :1
 ```
 
