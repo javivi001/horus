@@ -10,7 +10,7 @@ apt-get install make cmake gcc g++ gfortran -y
 apt-get install lxde -y
 apt-get install build-essential cmake make git gcc g++ gfortran libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy \
 libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev libv4l-dev libeigen3-dev -y
-apt-get install vnc4server -y
+apt-get install vnc4server libgl1-mesa-swx11-dev-y
 
 cd /root/
 git clone https://github.com/bq/opencv.git
